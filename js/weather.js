@@ -37,16 +37,13 @@ function gettingJSON(){
 
 
     $.getJSON(query,function(json){
-        //Use returned json to update the values of the three
-        //elements in HTML.
-        //I would print the JSON to the console
-        // Your code here.
+
         loc.innerHTML = (json["name"])
         temp.innerHTML = (json["main"].temp) + " with " + (json["weather"][0].description)
-        console.log(JSON.stringify(json));
+        //console.log(JSON.stringify(json));
         tempImg.src = "http://openweathermap.org/img/wn/" + (json["weather"][0].icon + ".png")
-        tempImg.alt - (json["weather"][0].description)
-        console.log("icon is" + json["weather"][0].icon)
+        tempImg.alt = (json["weather"][0].description)
+        //console.log("icon is" + json["weather"][0].icon)
 
     });
 }
